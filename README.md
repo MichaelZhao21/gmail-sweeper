@@ -13,14 +13,14 @@ const SHEET_NAME = "" // Name of the sheet within spreadsheet
 
 The values above are filled in based on a spreadsheet you will need to make. The spreadsheet is very simple and follows the format shown below:
 
-| One Day | Three Days | Seven Days |
-|---------|------------|------------|
-| query 1 | query 2    | query 3    |
-| etc     |            |            |
+| One Day | Three Days | Seven Days | One Month |
+|---------|------------|------------|-----------|
+| query 1 | query 2    | query 3    | query 4   |
+| etc     |            |            |           |
 
-Note that the headers don't matter but it's important that query entries start on row 2 and the three columns are columns A-C. Query entries also do not have to be consecutive (there can be gaps in the column). The format of the queries is the [Gmail query format](https://support.google.com/mail/answer/7190?hl=en&co=GENIE.Platform%3DAndroid), which can be easily created with the ["Show Search Options"](https://support.google.com/mail/answer/6579?hl=en) on the search bar (used to create filters).
+Note that the headers don't matter but it's important that query entries start on row 2 and the four columns are columns A-D. Query entries also do not have to be consecutive (there can be gaps in the column). The format of the queries is the [Gmail query format](https://support.google.com/mail/answer/7190?hl=en&co=GENIE.Platform%3DAndroid), which can be easily created with the ["Show Search Options"](https://support.google.com/mail/answer/6579?hl=en) on the search bar (used to create filters).
 
-> "One Day" means emails that are **more than** 1 day old are deleted. The same applies to 3 and 7 day queries. This can be modified in `sweep.js` relatively easily to include other limits.
+> "One Day" means emails that are **more than** 1 day old are deleted. The same applies to the other queries. This can be modified in `sweep.js` relatively easily to include other limits.
 
 ## Execution
 

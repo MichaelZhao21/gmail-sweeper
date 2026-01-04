@@ -6,6 +6,7 @@ function sweep() {
     removeQuery("A2:A", 1, sheet);
     removeQuery("B2:B", 3, sheet);
     removeQuery("C2:C", 7, sheet);
+    removeQuery("D2:D", 31, sheet);
 }
 
 function removeQuery(range, days, sheet) {
