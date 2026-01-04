@@ -37,3 +37,5 @@ This will create an empty app script and push the code to that script. To run th
 You will need to run `createTrigger` first to ensure that the trigger for the script to run nightly will be created. You can change the time of the trigger in the createTrigger function.
 
 Now your script is ready to be automatically run! You can manually run the `sweep` function to make sure everything works. It's probably a good idea if you have a lot of emails that will be caught by your query as it'll take a long time with lots of emails!
+
+> There is a `INBOX_ONLY` constant at the top of `sweep.js`. Set this to false to sweep your ENTIRE email instead of only your inbox. This may be helpful to set to false for a one-time cleanup when manually running `sweep`, but generally you only want to touch the inbox in case there are important files you want to keep!

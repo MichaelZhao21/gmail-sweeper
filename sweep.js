@@ -1,3 +1,5 @@
+const INBOX_ONLY = true;
+
 function sweep() {
     const sheet = SpreadsheetApp.openById(SPREADSHEET_ID).getSheetByName(SHEET_NAME);
 
@@ -10,8 +12,9 @@ function removeQuery(range, days, sheet) {
     const queries = sheet.getRange(range).getDisplayValues().flat().filter(a => a !== '');
 
     const query = queries.map(q => `(${q})`).join(' OR ');
-    const dayQuery = days === 0 ? "" : `before:${getDateDaysBefore(days)}`;
-    const fullQuery = `(${query}) ${dayQuery}`;
+    const dayQuery = days > 0 ? `before:${getDateDaysBefore(days)}` : "";
+    const inboxQuery = INBOX_ONLY ? "in:inbox" : "";
+    const fullQuery = `(${query}) ${dayQuery} ${inboxQuery}`;
     const threads = GmailApp.search(fullQuery);
 
     if (threads.length === 0) return;
